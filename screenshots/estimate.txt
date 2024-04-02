@@ -1,0 +1,19 @@
+1. Minimum RTO for a single AZ outage
+I think the achievable RTO for a single AZ outage can be very low, typically within a few of minutes.
+
+2. Minimum RTO for a single region outage
+    00:00 - Problem happens (0 minutes)
+    00:05 - An amount of time passes before an alert triggers (5 minutes)
+    00:06 - Alert triggers on-all staff (1 minute)
+    00:16 - On-call staff may need to get out of bed, get to computer, log in, log onto VPN (10 minutes)
+    00:26 - starts diagnosing issue (10 minutes)
+    00:41 - Root cause is discovered (15 minutes) : Database's teams support find Root cause is discovered
+    00:46 - Remediation started (5 minutes): Promote read replication to be the new master and then route the traffic to the new endpoint
+    00:56 - Remediation completed (10 minutes)
+Total time: 56 minutes
+
+3. Minimum RPO for a single AZ outage
+As it only takes a few minutes to fail over to another AZ, a few of minutes data will be lost.  
+
+4. Minimum RPO for a single region outage
+Minimum RPO should be equal to data backup.

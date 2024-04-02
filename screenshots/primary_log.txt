@@ -1,0 +1,19 @@
+mysql> use udacity;
+Database changed;
+mysql> create table account( id int not null AUTO_INCREMENT primary key, account_name varchar(20) no null); 
+Query OK, 0 rows affected (0.19 sec)
+
+mysql> insert into account(`account_name`) value('dailb');
+Query OK, 1 rows affected (0.01 sec)
+
+
+mysql> select * from account
+    -> ;
++----+----------------+
+| id | account_name           |
++----+----------------+
+|  1 | dailb          |
++----+----------------+
+1 row in set (0.00 sec)
+
+mysql>
